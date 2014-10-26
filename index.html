@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html class="" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<title>Демократия</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="shortcut icon" href="files/img/favicon.ico">
+	<link rel="apple-touch-icon" href="files/img/favicon.png">
+
+	<link rel="stylesheet" href="files/onepage-scroll.css">
+	<link rel="stylesheet" href="files/main.css">
+	<script src="files/jquery-1.11.1.min.js"></script>
+	<script src="files/bootstrap.min.js"></script>
+    
+	<script>
+		$(document).ready(function(){
+			var img = new Image();
+			img.src = 'files/img/bg.gif';
+
+			$('.main .page1').css('background-image', 'url("' + img.src + '?x=' + Date.now() + '")' );
+		});
+	</script>
+
+	<link rel="stylesheet" href="files/bootstrap.min.css">
+	<link rel="stylesheet" href="files/sb-admin-2.css">
+
+<style type="text/css">
+.alert{
+  margin:auto;
+  margin-bottom:0px; 
+  margin-top:10px; 
+  width:290px; 
+}
+</style>
+</head>
+<body class="viewing-page-1">
+
+<div style="position: relative; transform: translate3d(0px, 0%, 0px); transition: transform 1000ms ease 0s;" class="main onepage-wrapper">
+	<section style="background-image: url(&quot;files/img/bg.gif?x=1414245978125&quot;);" data-index="1" class="page1 ops-section active">
+		<div class="container middle">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 logo-container animated fadeInDown">
+					<img class="landing-logo" alt="Sceatt Logo" src="files/img/logo5.png" style="width:350px">
+					<h2>Присоединяйся!</h2><br>
+				</div>
+				<div class="fix"></div>
+			</div>
+			<div class="fix"></div>
+
+			<div class="row" style="text-align:center">			
+				<div>
+					<input id="email" type="text" style="width:290px; background-color:#fff; color:#000" placeholder="e-mail">
+				</div>
+				<div id="mess"></div>
+				<div style="margin-top:10px">
+					<button id="sendmail" type="button" class="btn btn-success" style="width:290px; height:45px;text-transform: uppercase; padding-top:9px">Попробовать&nbsp;бесплатно</button>
+				</div>       
+                                
+
+				<div class="fix"></div>
+			</div>
+			<div class="fix"></div>
+		</div>
+
+	</section>
+
+</div>
+
+<script>
+
+$('#sendmail').bind('click', function () {
+    if ( $('#email').val().indexOf('@')==-1 ) {
+	  $('#mess').html('<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>Пожалуйста, укажите свой e-mail</a></div>');
+    }
+});
+</script>
+
+</body></html>
