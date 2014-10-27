@@ -21,6 +21,9 @@
 
 			$('.main .page1').css('background-image', 'url("' + img.src + '?x=' + Date.now() + '")' );
 		});
+		
+
+
 	</script>
 
 	<link rel="stylesheet" href="files/bootstrap.min.css">
@@ -55,7 +58,7 @@
 				</div>
 				<div id="mess"></div>
 				<div style="margin-top:10px">
-					<button id="sendmail" type="button" class="btn btn-success" style="width:290px; height:45px;text-transform: uppercase; padding-top:9px">Попробовать&nbsp;бесплатно</button>
+					<button id="save_email" type="button" class="btn btn-success" style="width:290px; height:45px;text-transform: uppercase; padding-top:9px">Попробовать&nbsp;бесплатно</button>
 				</div>       
                                 
 
@@ -70,11 +73,22 @@
 
 <script>
 
-$('#sendmail').bind('click', function () {
+$('#save_email').bind('click', function () {
     if ( $('#email').val().indexOf('@')==-1 ) {
 	  $('#mess').html('<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>Пожалуйста, укажите свой e-mail</a></div>');
+    } else {
+	$.get( 'http://107.181.161.141/demo_save_email.php', {
+			'email' : $("#email").val(),
+			}, function (data) {
+			  if (data.error)
+				$("#mess").html('<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>'+data.error+'</a></div>');
+			  else
+				$("#mess").html('<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>Спасибо! Мы с Вами свяжемся.</a></div>');
+			}, 'JSON' );
     }
+    
 });
+
 </script>
 
 </body></html>
