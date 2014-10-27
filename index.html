@@ -16,10 +16,7 @@
     
 	<script>
 		$(document).ready(function(){
-			var img = new Image();
-			img.src = 'files/img/bg.gif';
-
-			$('.main .page1').css('background-image', 'url("' + img.src + '?x=' + Date.now() + '")' );
+			$('.main .page1').css('background-image', 'url("files/img/bg.gif")' );
 		});
 		
 
@@ -28,7 +25,13 @@
 
 	<link rel="stylesheet" href="files/bootstrap.min.css">
 	<link rel="stylesheet" href="files/sb-admin-2.css">
-
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
 <style type="text/css">
 .alert{
   margin:auto;
@@ -41,7 +44,7 @@
 <body class="viewing-page-1">
 
 <div style="position: relative; transform: translate3d(0px, 0%, 0px); transition: transform 1000ms ease 0s;" class="main onepage-wrapper">
-	<section style="background-image: url(&quot;files/img/bg.gif?x=1414245978125&quot;);" data-index="1" class="page1 ops-section active">
+	<section style="background-image: url('files/img/bg.gif');" data-index="1" class="page1 ops-section active">
 		<div class="container middle">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3 logo-container animated fadeInDown">
